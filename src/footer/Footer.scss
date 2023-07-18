@@ -1,0 +1,102 @@
+.containerDiv {
+  width: 100vw;
+  border-top: 1px groove lightgray;
+  position: fixed;
+  bottom: 0;
+
+  .mainContainer {
+    // border: 1px solid;
+    padding: 3rem 0rem;
+    margin: 1rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    .phoneDiv {
+      li {
+        list-style: none;
+        font-weight: 800;
+        font-size: 1.35rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      a {
+        font-size: 0.9rem;
+        color: rgb(108, 105, 105);
+        text-decoration: none;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    .emailDiv {
+      li {
+        list-style: none;
+        font-weight: 800;
+        font-size: 1.35rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      a {
+        font-size: 0.9rem;
+        color: rgb(108, 105, 105);
+        text-decoration: none;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    .socialDiv {
+      li {
+        list-style: none;
+        font-weight: 800;
+        font-size: 1.35rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .icons {
+        display: flex;
+        gap: 1rem;
+        a {
+          color: rgb(108, 105, 105);
+
+          &:hover {
+            color: black;
+          }
+        }
+      
+      }
+    }
+    .copyRigthDiv {
+      p {
+        //   border: 1px solid;
+        color: black;
+        opacity: 0.6;
+        font-size: 0.888rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin: 0;
+        padding-right: 10px;
+        cursor: default;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .containerDiv {
+    padding: 1rem;
+    .mainContainer {
+      flex-direction: column;
+      // border: 1px solid;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .socialDiv {
+        .icons {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
