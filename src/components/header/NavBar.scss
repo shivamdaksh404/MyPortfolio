@@ -1,5 +1,7 @@
 nav {
   border-bottom: 1px solid lightgray;
+  // border: 1px solid greenyellow;
+  // background-color: red;
   .containerLeft {
     display: flex;
     font-weight: 600;
@@ -15,8 +17,9 @@ nav {
     li {
       list-style: none;
       font-size: 1.5rem;
-      cursor: default;
+      cursor: pointer;
       span {
+        cursor: default;
         font-size: 1rem;
       }
     }

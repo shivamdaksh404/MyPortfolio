@@ -1,8 +1,10 @@
 .containerDiv {
-  width: 100vw;
+  // width: 100vw;
   border-top: 1px groove lightgray;
-  position: fixed;
+  // border: 1px solid yellow;
+  position: sticky;
   bottom: 0;
+  // border: 1px solid green;
 
   .mainContainer {
     // border: 1px solid;
@@ -82,6 +84,7 @@
 @media screen and (max-width: 850px) {
   .containerDiv {
     padding: 1rem;
+    // border: 1px solid orange;
     .mainContainer {
       flex-direction: column;
       // border: 1px solid;

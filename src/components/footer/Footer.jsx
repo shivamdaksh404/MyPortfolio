@@ -1,10 +1,7 @@
-import { Twitter } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import React from "react";
 import "./Footer.scss";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Footer() {
   return (

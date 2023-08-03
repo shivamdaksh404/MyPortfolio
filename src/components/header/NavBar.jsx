@@ -3,62 +3,22 @@ import "./NavBar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { gotoContact, gotoProject, gotoResume, gotoHome } from "../../ReduxFiles/Slices";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  const [isSelected, setIsSelected] = useState({
-    home: true,
-    resume: false,
-    project: false,
-    contact: false,
-  });
-  const gotoHome = () => {
-    navigate("/");
-    const activeLink = { ...isSelected };
-    activeLink.home = true;
-    activeLink.resume = false;
-    activeLink.project = false;
-    activeLink.contact = false;
-    setIsSelected(activeLink);
-  };
-  const gotoResume = () => {
-    navigate("/resume");
-    const activeLink = { ...isSelected };
-    activeLink.home = false;
-    activeLink.resume = true;
-    activeLink.project = false;
-    activeLink.contact = false;
-    setIsSelected(activeLink);
-  };
-
-  const gotoProject = () => {
-    navigate("/project");
-    const activeLink = { ...isSelected };
-    activeLink.home = false;
-    activeLink.resume = false;
-    activeLink.project = true;
-    activeLink.contact = false;
-    setIsSelected(activeLink);
-  };
-
-  const gotoContact = () => {
-    navigate("/contact");
-    const activeLink = { ...isSelected };
-    activeLink.home = false;
-    activeLink.resume = false;
-    activeLink.project = false;
-    activeLink.contact = true;
-    setIsSelected(activeLink);
-  };
-
+  const navigationData = useSelector((state) => state.navigation);
+  const dispatch = useDispatch();
+ 
   return (
     <nav className="navbar navbar-light mx-3 bg-light">
       <div className="container-fluid ">
         <div className="containerLeft">
           <img
-            onClick={gotoHome}
+            onClick={() => dispatch(gotoHome()) && navigate("/")}
             style={
-              isSelected.home === true
+              navigationData.value.home === true
                 ? { border: " 0.20rem solid #00acee" }
                 : {}
             }
@@ -69,7 +29,7 @@ export default function NavBar() {
             className="rounded-circle img"
           />
 
-          <li>
+          <li onClick={() => dispatch(gotoHome()) && navigate("/")}>
             Shivam Daksh <span className="fw-light">Frontend Developer</span>
           </li>
         </div>
@@ -78,11 +38,11 @@ export default function NavBar() {
           <div className="liDiv">
             <li
               style={
-                isSelected.resume === true
+                navigationData.value.resume === true
                   ? { borderBottom: " 0.15rem solid #00acee" }
                   : {}
               }
-              onClick={gotoResume}
+              onClick={() => dispatch(gotoResume()) && navigate('/resume')}
             >
               Resume
             </li>
@@ -90,11 +50,11 @@ export default function NavBar() {
           <div className="liDiv">
             <li
               style={
-                isSelected.project === true
+                navigationData.value.project === true
                   ? { borderBottom: " 0.15rem solid #00acee" }
                   : {}
               }
-              onClick={gotoProject}
+              onClick={() => dispatch(gotoProject())&& navigate("/project")}
             >
               Project
             </li>
@@ -102,17 +62,19 @@ export default function NavBar() {
           <div className="liDiv">
             <li
               style={
-                isSelected.contact === true
+                navigationData.value.contact === true
                   ? { borderBottom: " 0.15rem solid #00acee" }
                   : {}
               }
-              onClick={gotoContact}
+              onClick={() => dispatch(gotoContact()) && navigate("/contact")}
             >
               Contact
             </li>
           </div>
         </div>
+        {/* ----------------------------------------------------- */}
         {/* Full screen modal*/}
+        {/* ------------------------------------------------------- */}
         <div className="toggleContainer">
           <IconButton
             type="button"
@@ -145,11 +107,11 @@ export default function NavBar() {
                 <div className="liDiv" data-bs-dismiss="modal">
                   <li
                     style={
-                      isSelected.resume === true
+                      navigationData.value.resume === true
                         ? { borderBottom: " 0.15rem solid #00acee" }
                         : {}
                     }
-                    onClick={gotoResume}
+                    onClick={() => dispatch(gotoResume()) && navigate("/resume")}
                   >
                     Resume
                   </li>
@@ -157,11 +119,11 @@ export default function NavBar() {
                 <div className="liDiv" data-bs-dismiss="modal">
                   <li
                     style={
-                      isSelected.project === true
+                      navigationData.value.project === true
                         ? { borderBottom: " 0.15rem solid #00acee" }
                         : {}
                     }
-                    onClick={gotoProject}
+                    onClick={() => dispatch(gotoProject()) && navigate("/project")}
                   >
                     Project
                   </li>
@@ -169,11 +131,11 @@ export default function NavBar() {
                 <div className="liDiv" data-bs-dismiss="modal">
                   <li
                     style={
-                      isSelected.contact === true
+                      navigationData.value.contact === true
                         ? { borderBottom: " 0.15rem solid #00acee" }
                         : {}
                     }
-                    onClick={gotoContact}
+                    onClick={() => dispatch(gotoContact()) & navigate("/contact")}
                   >
                     Contact
                   </li>
