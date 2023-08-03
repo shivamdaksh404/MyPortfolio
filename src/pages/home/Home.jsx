@@ -22,9 +22,7 @@ const dispatch = useDispatch()
             <h1>Hello</h1>
             <h4>A Bit About Me</h4>
             <p>
-              I'm a paragraph. Click here to add your own text and edit me. I'm
-              a great place for you to tell a story and let your users know a
-              little more about you.
+            I am highly motivated, adaptable, and a fast learner, always eager to take on new challenges and contribute to a collaborative team environment. I am confident that my technical skills, creativity, and commitment to excellence make me a valuable addition to the team.
             </p>
             <div className="pageRedirectDiv">
               <h4 className="redirection" onClick={()=>dispatch(gotoResume()) && navigate("/resume")}>Resume</h4>
